@@ -1,0 +1,15 @@
+services:
+  frontend:
+    build: ./front-end
+    ports:
+      - 3000:3000
+    volumes:
+      - ./front-end/src:/app/src
+
+  backend:
+    build: ./back-end
+    ports:
+      - 3001:3001
+    volumes:
+      - ./back-end/src:/app/src
+      - ./back-end/wildersdb.sqlite:/app/wildersdb.sqlite
